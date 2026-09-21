@@ -1,1 +1,102 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>v2 placeholder</title></head><body></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Gestão de Projetos além do livro — v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#14110d;--paper:#f4efe6;--card:#fffdf8;--line:#e4d9c8;--muted:#6b6258;--terra:#c45c26;--deep:#9a3f14;--forest:#2f4a3c;--gold:#d4a017;--r:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;line-height:1.55;font-size:17px}
+a{color:var(--deep)}
+.wrap{width:min(1080px,calc(100% - 32px));margin:0 auto}
+header.top{position:sticky;top:0;z-index:20;background:rgba(244,239,230,.94);border-bottom:1px solid var(--line)}
+.top-inner{display:flex;align-items:center;justify-content:space-between;min-height:58px;gap:12px}
+.brand{font-weight:700}.brand span{color:var(--terra)}
+nav{display:flex;gap:6px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--ink);font-size:.8rem;font-weight:600;white-space:nowrap;padding:8px 10px}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(2rem,7vw,4rem);line-height:1.05;margin:8px 0 14px}
+.kicker{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra)}
+.tracks{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.tracks button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:700 .85rem inherit;cursor:pointer}
+.tracks button.on{background:var(--ink);color:#fff}
+.stats{display:grid;gap:12px;margin:22px 0}
+.stat{background:var(--ink);color:#f7f1e6;border-radius:var(--r);padding:20px}
+.stat b{font-family:Fraunces,serif;font-size:2.4rem;display:block;color:#f0c14b}
+section{padding:26px 0}h2{font-family:Fraunces,serif}
+.grid{display:grid;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.links a{font-weight:700;margin-right:12px}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;background:#efe2cf;color:var(--deep);padding:3px 8px;border-radius:999px;margin-bottom:8px}
+.tag.gp{background:#dce8e1;color:var(--forest)}.tag.adm{background:#f3e0d4}
+.labs{background:var(--forest);color:#f4efe6;border-radius:22px;padding:22px}
+.task{background:#fff;color:var(--ink);border-radius:16px;padding:16px;margin-top:14px}
+.note{font-size:.86rem;color:var(--muted)}.hide{display:none!important}
+@media(min-width:760px){.stats,.grid.two{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr 1fr}}
+</style></head><body>
+<header class="top"><div class="wrap top-inner"><div class="brand">GP <span>além do livro</span> · v2</div>
+<nav><a href="#trilhas">Trilhas</a><a href="#minas">Minas</a><a href="#lei">Lei 14.133</a><a href="#tarefa">Tarefa</a></nav></div></header>
+<main class="wrap">
+<p class="kicker">Unimontes · set. 2026</p>
+<h1>O manual não é o território.</h1>
+<p>Versão 2: duas trilhas, um caso mineiro, a Lei 14.133 e uma tarefa de sete dias.</p>
+<p class="note">Prof. Marcelo Caetano Melo</p>
+<div class="stats">
+<article class="stat"><b>0,5%</b><p>megaprojetos no prazo, orçamento e benefício.</p></article>
+<article class="stat"><b>~700</b><p>obras paradas em Minas (TCE-MG, 2025).</p></article>
+<article class="stat"><b>14.133</b><p>a lei que o backlog atravessa antes do sprint.</p></article>
+</div>
+<section id="trilhas"><h2>Escolha a trilha</h2>
+<div class="tracks">
+<button type="button" data-filter="all" class="on">Os dois cursos</button>
+<button type="button" data-filter="gp">Gestão Pública</button>
+<button type="button" data-filter="adm">Administração</button>
+</div>
+<div class="grid two">
+<article class="card" data-track="gp"><span class="tag gp">GP</span><h3>Comece por aqui</h3><p>Flyvbjerg, TCU/TCE, ENAP e a Lei 14.133.</p><p class="links"><a href="https://repositorio.enap.gov.br/handle/1/6155" target="_blank" rel="noopener">Guia ENAP</a> <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm" target="_blank" rel="noopener">Lei 14.133</a></p></article>
+<article class="card" data-track="adm"><span class="tag adm">ADM</span><h3>Comece por aqui</h3><p>PMO, stakeholders, produto versus obra.</p><p class="links"><a href="https://periodicos.fgv.br/rae/article/view/86719" target="_blank" rel="noopener">RAE 2022</a> <a href="https://github.com/makeplane/plane" target="_blank" rel="noopener">Plane</a></p></article>
+</div></section>
+<section id="minas"><h2>O caso está em Minas</h2>
+<article class="card" data-track="gp"><span class="tag gp">TCE-MG</span><h3>~700 obras paradas</h3><p>Das quase 12 mil obras interrompidas no país, cerca de 700 em Minas. Educação e saúde concentram o recorte.</p><p class="links"><a href="https://www.tce.mg.gov.br/Presidente-Durval-Angelo-faz-conferencia-de-abertura-em-seminario-de-Obras-Paralisadas.html/Noticia/1111627887" target="_blank" rel="noopener">Seminário TCE-MG</a></p></article>
+<article class="card" data-track="gp"><span class="tag gp">DER-MG · 2026</span><h3>MGC-455: R$ 11,7 mi suspensos</h3><p>Edital exigiu usina de asfalto em 30 dias, com licença ambiental da empresa. O TCE suspendeu. Não é Gantt: é fase zero.</p><p class="links"><a href="https://g1.globo.com/mg/triangulo-mineiro/noticia/2026/05/08/tce-barra-licitacao-de-r-117-milhoes-para-obras-na-mgc-455-por-exigencia-irregular-no-edital.ghtml" target="_blank" rel="noopener">G1</a></p></article>
+<article class="card" data-track="all"><span class="tag">Montes Claros</span><h3>A ponte da Unimontes foi entregue</h3><p>Parceria Estado + município no Córrego Vieira. Projeto público também termina. O que separa este desfecho dos 700 canteiros?</p><p class="links"><a href="https://agenciaminas.mg.gov.br/noticia/parceria-entre-governo-de-minas-e-municipio-viabiliza-entrega-da-ponte-da-unimontes" target="_blank" rel="noopener">Agência Minas</a></p></article>
+</section>
+<section id="lei"><h2>Scrum não atravessa o edital sozinho</h2>
+<article class="card" data-track="gp"><h3>O que a 14.133 cobra</h3><p>Fase preparatória, ETP, matriz de riscos. Mudar backlog no contrato sem amparo no edital não é sprint: é aditivo.</p><p class="links"><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm" target="_blank" rel="noopener">Texto no Planalto</a></p></article>
+<article class="card" data-track="adm"><h3>Onde o ágil cabe</h3><p>Software interno, discovery, fila de serviço. Não cabe ritual de startup em obra de asfalto.</p></article>
+</section>
+<section id="repos"><h2>Ferramentas</h2>
+<p class="links">
+<a href="https://github.com/opf/openproject" target="_blank" rel="noopener">OpenProject</a>
+<a href="https://github.com/makeplane/plane" target="_blank" rel="noopener">Plane</a>
+<a href="https://kanboard.org" target="_blank" rel="noopener">Kanboard</a>
+<a href="https://github.com/kanboard/kanboard" target="_blank" rel="noopener">Kanboard GitHub</a>
+<a href="https://taiga.io" target="_blank" rel="noopener">Taiga</a>
+<a href="https://wekan.fi" target="_blank" rel="noopener">Wekan</a>
+<a href="https://docs.github.com/pt/issues/planning-and-tracking-with-projects" target="_blank" rel="noopener">GitHub Projects</a>
+</p></section>
+<section id="tarefa"><div class="labs"><h2>Tarefa da semana (7 dias)</h2>
+<p>Dupla. Quadro + parágrafo de 15 linhas. Sem PowerPoint.</p>
+<div class="task">
+<p><strong>1.</strong> Objeto real e pequeno (merenda, fila, laboratório, ponte do campus).</p>
+<p><strong>2.</strong> Backlog em Kanboard, GitHub Projects ou planilha. Colunas: a fazer / em análise / bloqueado por regra / feito.</p>
+<p><strong>3.</strong> Marquem licitação, convênio, outro ente, calendário eleitoral.</p>
+<p><strong>4.</strong> O triângulo de ferro basta? Se não, o que falta medir?</p>
+</div></div></section>
+</main>
+<footer class="wrap"><p class="note">Fontes: Flyvbjerg/Oxford; TCE-MG 2025. Não substitui a bibliografia obrigatória.</p></footer>
+<script>
+const buttons=[...document.querySelectorAll(".tracks button")];
+const items=[...document.querySelectorAll("[data-track]")];
+buttons.forEach(btn=>btn.addEventListener("click",()=>{
+ buttons.forEach(b=>b.classList.toggle("on",b===btn));
+ const f=btn.dataset.filter;
+ items.forEach(el=>{
+  const t=el.dataset.track;
+  el.classList.toggle("hide", !(f==="all"||t==="all"||t===f));
+ });
+}));
+</script>
+</body></html>
