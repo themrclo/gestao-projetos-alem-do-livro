@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#14110d" />
+  <title>Gestão de Projetos além do livro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#14110d;--paper:#f4efe6;--card:#fffdf8;--line:#e4d9c8;--muted:#6b6258;--terra:#c45c26;--terra-deep:#9a3f14;--forest:#2f4a3c;--gold:#d4a017;--shadow:0 10px 30px rgba(20,17,13,.08);--radius:18px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;line-height:1.55;font-size:17px}
+    a{color:var(--terra-deep)}.wrap{width:min(1080px,calc(100% - 32px));margin:0 auto}
+    header.top{position:sticky;top:0;z-index:20;background:rgba(244,239,230,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .top-inner{display:flex;align-items:center;justify-content:space-between;min-height:58px;gap:12px}
+    .brand{font-weight:700;font-size:.92rem}.brand span{color:var(--terra)}
+    nav{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    nav a{text-decoration:none;color:var(--ink);font-size:.82rem;font-weight:600;white-space:nowrap;padding:8px 10px;border-radius:999px}
+    h1{font-family:Fraunces,Georgia,serif;font-size:clamp(2rem,7vw,4.1rem);line-height:1.05;margin:0 0 16px}
+    .kicker{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+    .lede{font-size:1.12rem;max-width:42rem;color:#3b342d}
+    .stats{display:grid;grid-template-columns:1fr;gap:12px;margin:28px 0 8px}
+    .stat{background:var(--ink);color:#f7f1e6;border-radius:var(--radius);padding:22px 20px}
+    .stat b{font-family:Fraunces,serif;font-size:clamp(2.2rem,8vw,3.3rem);display:block;color:#f0c14b;line-height:1}
+    .stat p{margin:10px 0 0;color:#d8d0c4;font-size:.95rem}
+    section{padding:28px 0}h2{font-family:Fraunces,serif;font-size:clamp(1.5rem,4vw,2.2rem);margin:0 0 8px}
+    .sub{color:var(--muted);margin:0 0 18px}.grid{display:grid;gap:14px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px;font-size:1.05rem}.card p{margin:0 0 10px}
+    .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#efe2cf;color:var(--terra-deep);padding:4px 8px;border-radius:999px;margin-bottom:10px}
+    .people{display:grid;gap:12px}.person{display:grid;grid-template-columns:54px 1fr;gap:12px}
+    .avatar{width:54px;height:54px;border-radius:16px;background:var(--forest);color:#f4efe6;display:grid;place-items:center;font-weight:700}
+    .person.gold .avatar{background:var(--terra)}
+    details.acc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 14px;margin-bottom:10px}
+    details.acc summary{cursor:pointer;font-weight:700;padding:12px 0;list-style:none}
+    details.acc summary::-webkit-details-marker{display:none}
+    details.acc summary::after{content:"+";float:right;color:var(--terra)}
+    details.acc[open] summary::after{content:"–"}
+    .list{margin:0;padding:0 0 12px 18px}.list li{margin:0 0 8px}
+    .labs{background:var(--forest);color:#f4efe6;border-radius:22px;padding:22px}
+    .labs h2,.labs .sub{color:#f4efe6}.labs a{color:#f0c14b}
+    .q{border-left:4px solid var(--gold);padding:4px 0 4px 14px;margin:14px 0 0;font-family:Fraunces,serif;font-size:1.15rem}
+    footer{padding:36px 0 70px;color:var(--muted);font-size:.92rem}
+    .cta-bar{position:sticky;bottom:12px;z-index:15;display:flex;justify-content:center;pointer-events:none}
+    .cta{pointer-events:auto;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:12px 18px;font-weight:700;font-family:inherit;box-shadow:0 12px 24px rgba(0,0,0,.22)}
+    .note{font-size:.86rem;color:var(--muted)}
+    @media(min-width:720px){.stats{grid-template-columns:repeat(3,1fr)}.grid.two,.people{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:1fr 1fr 1fr}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap top-inner"><div class="brand">GP <span>além do livro</span></div>
+  <nav><a href="#por-que">Por quê</a><a href="#repos">Repositórios</a><a href="#pessoas">Pessoas</a><a href="#orgs">Órgãos</a><a href="#ler">Ler</a><a href="#aula">Em sala</a></nav></div></header>
+  <main>
+  <section class="hero"><div class="wrap">
+    <div class="kicker">Material complementar · Gestão Pública e Administração</div>
+    <h1>Saiam da bolha do manual.</h1>
+    <p class="lede">O livro ensina o vocabulário. O mundo real ensina por que obras param, por que o Scrum não resolve licitação e por que 199 em cada 200 megaprojetos falham em alguma dimensão. Este guia é um mapa — não um resumo do PMBOK.</p>
+    <p class="note">Prof. Marcelo Caetano Melo · uso livre na disciplina · set. 2026</p>
+    <div class="stats">
+      <article class="stat"><b>0,5%</b><p>dos megaprojetos no mundo saem no prazo, no orçamento <em>e</em> com o benefício prometido (Flyvbjerg / Oxford).</p></article>
+      <article class="stat"><b>8,5%</b><p>do valor presente se perde com um ano de atraso no Brasil — bem mais que nos EUA (2,9%).</p></article>
+      <article class="stat"><b>50,7%</b><p>das obras federais auditadas pelo TCU estavam paralisadas: 11.469 canteiros parados.</p></article>
+    </div>
+  </div></section>
+  <section id="por-que"><div class="wrap">
+    <h2>O ponto de partida</h2><p class="sub">Três ideias que cabem numa aula e desmontam a fantasia do “seguir o guia”.</p>
+    <div class="grid three">
+      <article class="card"><div class="tag">1</div><h3>O triângulo de ferro não basta</h3><p>Prazo, custo e escopo medem entrega. Política pública mede benefício. Um hospital no prazo, vazio, é fracasso.</p></article>
+      <article class="card"><div class="tag">2</div><h3>O problema muitas vezes não é o Gantt</h3><p>Viés de otimismo, aditivo contratual, medo do controle (“apagão das canetas”) e capacidade estatal pesam mais que a ferramenta.</p></article>
+      <article class="card"><div class="tag">3</div><h3>Contexto manda na abordagem</h3><p>Obra de saneamento ≠ app da prefeitura ≠ reforma administrativa. Híbrido não é moda: é escolha consciente.</p></article>
+    </div>
+  </div></section>
+  <section id="repos"><div class="wrap">
+    <h2>Repositórios e software aberto</h2><p class="sub">Para laboratório. Não precisa comprar Primavera para entender um PMO.</p>
+    <div class="grid two">
+      <article class="card"><div class="tag">PMO / portfólio</div><h3>OpenProject</h3><p>Gantt, Scrum, portfólio e colaboração. Usado por órgãos públicos na Europa. Bom debate: soberania de dados versus Jira.</p><a href="https://github.com/opf/openproject" target="_blank" rel="noopener">github.com/opf/openproject</a></article>
+      <article class="card"><div class="tag">Produto / issues</div><h3>Plane</h3><p>Alternativa moderna a Linear/Jira. Contraste com projeto de obra: aqui o backlog é o produto, não a EAP da ponte.</p><a href="https://github.com/makeplane/plane" target="_blank" rel="noopener">github.com/makeplane/plane</a></article>
+      <article class="card"><div class="tag">Secretaria pequena</div><h3>Leantime</h3><p>Feito para quem não é gerente de projetos profissional. Une metas, OKRs e tarefas.</p><a href="https://github.com/Leantime/leantime" target="_blank" rel="noopener">github.com/Leantime/leantime</a></article>
+      <article class="card"><div class="tag">Kanban leve</div><h3>Taiga, Kanboard, Wekan</h3><p>Quadros simples. Exercício: transformar uma política pública em backlog visível.</p></article>
+      <article class="card"><div class="tag">Já está no GitHub</div><h3>GitHub Projects</h3><p>O próprio GitHub como quadro + automação.</p><a href="https://docs.github.com/pt/issues/planning-and-tracking-with-projects" target="_blank" rel="noopener">Documentação oficial</a></article>
+      <article class="card"><div class="tag">Fronteira</div><h3>Agentic Project Management</h3><p>Planner, Manager e Workers com agentes de IA. Quem assina a Tomada de Contas?</p><a href="https://github.com/sdi2200262/agentic-project-management" target="_blank" rel="noopener">Repositório APM</a></article>
+    </div>
+  </div></section>
+  <section id="pessoas"><div class="wrap">
+    <h2>Pessoas para seguir</h2><p class="sub">Não abandonem Vargas e Kerzner. Ampliem o círculo.</p>
+    <div class="people">
+      <article class="card person gold"><div class="avatar">RV</div><div><h3>Ricardo Viana Vargas</h3><p>Mineiro de formação (UFMG). Chair do PMI, UNOPS, IA em projetos, artigo na HBR.</p><a href="https://ricardo-vargas.com/pt/" target="_blank" rel="noopener">ricardo-vargas.com</a></div></article>
+      <article class="card person"><div class="avatar">MC</div><div><h3>Marly Carvalho e Roque Rabechini Jr.</h3><p>Eixo acadêmico brasileiro: PMO, stakeholders, competências. Artigo na RAE (2022).</p></div></article>
+      <article class="card person"><div class="avatar">BF</div><div><h3>Bent Flyvbjerg</h3><p><em>How Big Things Get Done</em>. Iron law, viés de otimismo, Reference Class Forecasting.</p></div></article>
+      <article class="card person"><div class="avatar">AN</div><div><h3>Antonio Nieto-Rodríguez</h3><p>Projeto como veículo de estratégia. <em>HBR Project Management Handbook</em>.</p></div></article>
+      <article class="card person"><div class="avatar">KW</div><div><h3>Kathleen Walch</h3><p>#1 Thinkers360 2025 em gestão de projetos. Eixo: IA e o ofício do gerente.</p></div></article>
+      <article class="card person"><div class="avatar">HT</div><div><h3>Huemann, Turner, Highsmith, Carboni</h3><p>IJPM, Agile histórico e sustentabilidade P5. Complemento ao PMBOK 7.</p></div></article>
+    </div>
+    <p class="note" style="margin-top:14px">Perto de casa: <a href="https://pmimg.org.br/" target="_blank" rel="noopener">PMI Minas Gerais</a> (desde 1999) e seus anais científicos.</p>
+  </div></section>
+  <section id="orgs"><div class="wrap">
+    <h2>Órgãos, empresas e comunidades</h2>
+    <details class="acc" open><summary>Setor público brasileiro</summary><ul class="list">
+      <li><strong>ENAP + MGI + PMI-DF:</strong> <a href="https://repositorio.enap.gov.br/handle/1/6155" target="_blank" rel="noopener">Guia Referencial (2021)</a>.</li>
+      <li><strong>MGI + PNUD (2025):</strong> Guia Prático de Projetos em sete domínios.</li>
+      <li><strong>TCU:</strong> obras paradas, BDI, previsão por classe de referência.</li>
+      <li><strong>PPA 2024–2027</strong> e <strong>BNDES</strong> (saneamento e concessões).</li>
+    </ul></details>
+    <details class="acc"><summary>Privado e híbrido</summary><ul class="list">
+      <li>Turner & Townsend — estudo 2026 sobre atraso no Brasil.</li>
+      <li>BCG — benchmarking de grandes obras.</li>
+      <li>Brightline Initiative (PMI + BCG + Agile Alliance).</li>
+    </ul></details>
+    <details class="acc"><summary>Comunidades</summary><ul class="list">
+      <li>PMI-MG, PMI-SP, PMI-DF, IPMA, APM, GPM Global, EnANPAD.</li>
+    </ul></details>
+  </div></section>
+  <section id="ler"><div class="wrap">
+    <h2>O que ler quando o livro acabar</h2><p class="sub">Comecem por um de cada bloco.</p>
+    <div class="grid two">
+      <article class="card"><div class="tag">Gestão pública</div><ul class="list">
+        <li>Flyvbjerg, Holm & Buhl (2002) — subestimação de custo em obras.</li>
+        <li>Flyvbjerg — <em>How Big Things Get Done</em> (2023).</li>
+        <li>Santana (UFG/PROFIAP, 2024) — Tribunais de Contas.</li>
+        <li>Relatório Pessoas à Frente (2026) — apagão das canetas.</li>
+        <li>PMO em prefeitura do Paraná (GeSec, 2023): 396 projetos.</li>
+      </ul></article>
+      <article class="card"><div class="tag">Administração</div><ul class="list">
+        <li>Rabechini et al. na RAE (2022) — stakeholders + PMO.</li>
+        <li>HBR: Nieto-Rodríguez e Vargas (IA).</li>
+        <li>Carvalho & Rabechini — Fundamentos em Gestão de Projetos.</li>
+        <li>Oxford Handbook of Megaproject Management.</li>
+        <li>International Journal of Project Management.</li>
+      </ul></article>
+    </div>
+    <article class="card" style="margin-top:14px"><h3>Revistas</h3><p><strong>Brasil:</strong> GeP, RAE, RAP, Revista do TCU, Gestão & Gerenciamento, GeSec, Anais PMI-MG.</p><p><strong>Fora:</strong> IJPM, Project Leadership and Society, PM World Journal, HBR.</p></article>
+  </div></section>
+  <section id="aula"><div class="wrap">
+    <div class="labs">
+      <h2>Três eixos para estourar o livro em sala</h2>
+      <p><strong>A. Complexidade, não receita.</strong> Obra de saneamento versus app da prefeitura versus reforma administrativa.</p>
+      <p><strong>B. Megaprojeto e investimento público.</strong> Quando o benefício social é o produto, o triângulo de ferro fica pequeno.</p>
+      <p><strong>C. IA e o ofício do gerente.</strong> O agente monta o plano. Quem responde no processo administrativo?</p>
+      <p class="q">Laboratório: um grupo usa OpenProject ou Plane; outro, planilha + 5W2H; outro, GitHub Issues. Comparem governança, transparência e LAI.</p>
+    </div>
+    <div class="card" style="margin-top:16px"><h3>Camadas da bibliografia</h3><ol class="list">
+      <li>Núcleo: PMBOK 7 + guia ENAP/MGI + ISO 21500/21502.</li>
+      <li>Crítica empírica: Flyvbjerg + TCU + Turner & Townsend 2026.</li>
+      <li>Brasil acadêmico: GeP + RAE + dissertações PROFIAP/EBAPE.</li>
+      <li>Prática aberta: um repositório + GitHub Projects.</li>
+      <li>Território: PMI-MG + um caso mineiro.</li>
+      <li>Fronteira: um artigo de IA ou sustentabilidade por semestre.</li>
+    </ol></div>
+  </div></section>
+  </main>
+  <footer><div class="wrap"><p>Material de apoio. Não substitui a bibliografia obrigatória. Leiam com desconfiança produtiva: se parecer receita, perguntem para qual contexto.</p></div></footer>
+  <div class="cta-bar"><button class="cta" type="button" id="share">Compartilhar este guia</button></div>
+  <script>
+    const btn=document.getElementById("share");
+    btn.addEventListener("click",async()=>{
+      const url=location.href,title="Gestão de Projetos além do livro";
+      if(navigator.share){try{await navigator.share({title,url,text:title});return;}catch(e){}}
+      try{await navigator.clipboard.writeText(url);btn.textContent="Link copiado";setTimeout(()=>btn.textContent="Compartilhar este guia",2000);}catch(e){prompt("Copie o link:",url);}
+    });
+  </script>
+</body></html>
